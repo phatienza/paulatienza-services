@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Claire Novak — Couples & Relationship Therapy | Austin, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blush: #E8C5C2;
+    --blush-light: #F7EDEC;
+    --blush-deep: #C49490;
+    --rose: #B5706B;
+    --sage: #A8B89A;
+    --sage-light: #EDF0E9;
+    --sage-deep: #6E836A;
+    --mist: #C5CEDE;
+    --mist-light: #EEF1F5;
+    --cream: #FAF8F5;
+    --paper: #F4F1EC;
+    --ink: #2A2520;
+    --ink-mid: #6B6260;
+    --ink-light: #9B9290;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3.5rem;
+    background: rgba(250, 248, 245, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(168, 184, 154, 0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--rose);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+
+  .nav-book {
+    background: var(--rose) !important;
+    color: white !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 50px;
+    font-weight: 400 !important;
+    letter-spacing: 0.06em !important;
+    font-size: 0.75rem !important;
+    transition: background 0.2s !important;
+  }
+  .nav-book:hover { background: var(--blush-deep) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    background: var(--blush-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* decorative circles */
+  .hero-circle-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(181, 112, 107, 0.12);
+    top: -150px;
+    right: -150px;
+    pointer-events: none;
+  }
+
+  .hero-circle-2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(181, 112, 107, 0.08);
+    bottom: -50px;
+    left: -50px;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--rose);
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--rose);
+    opacity: 0.6;
+  }
+
+  .hero-h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 3.5vw, 3.8rem);
+    font-weight: 200;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-h1 span.sage { color: var(--sage-deep); }
+
+  .hero-lead {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+    line-height: 1.85;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .btn-rose {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--rose);
+    color: white;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    padding: 0.9rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s;
+    width: fit-content;
+    position: relative;
+  }
+  .btn-rose:hover { background: var(--blush-deep); }
+
+  .btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--rose);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: gap 0.2s;
+    position: relative;
+  }
+  .btn-text:hover { gap: 0.75rem; }
+
+  .hero-right {
+    background: var(--sage-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* organic shape background */
+  .organic-blob {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+    background: rgba(168, 184, 154, 0.25);
+    top: 5%;
+    right: -10%;
+    animation: blobFloat 8s ease-in-out infinite;
+  }
+
+  @keyframes blobFloat {
+    0%, 100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; transform: translateY(0); }
+    50% { border-radius: 38% 62% 54% 46% / 44% 60% 40% 56%; transform: translateY(-12px); }
+  }
+
+  /* fake photo placeholder */
+  .portrait-frame {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 380px;
+    background: linear-gradient(160deg, var(--sage) 0%, var(--sage-deep) 100%);
+    border-radius: 200px 200px 60px 60px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .portrait-silhouette {
+    width: 65%;
+    height: 85%;
+    background: linear-gradient(180deg, rgba(110, 131, 106, 0.3) 0%, rgba(42, 37, 32, 0.4) 100%);
+    border-radius: 200px 200px 0 0;
+  }
+
+  .hero-card {
+    position: relative;
+    z-index: 2;
+    background: white;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 24px rgba(42,37,32,0.06);
+  }
+
+  .hero-card-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .availability-dots {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .dot.open { background: #7CC08A; }
+  .dot.closed { background: var(--blush-deep); opacity: 0.4; }
+
+  .avail-text {
+    font-size: 0.75rem;
+    color: var(--sage-deep);
+    margin-left: 0.5rem;
+  }
+
+  /* SOFT BAND */
+  .soft-band {
+    background: var(--paper);
+    padding: 2rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(168,184,154,0.2);
+    border-bottom: 1px solid rgba(168,184,154,0.2);
+  }
+
+  .band-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .band-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: var(--rose);
+  }
+
+  .band-label {
+    font-size: 0.72rem;
+    color: var(--ink-mid);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .band-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(168,184,154,0.3);
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 6rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    background: var(--cream);
+  }
+
+  .about-image-wrapper {
+    position: relative;
+  }
+
+  .about-bg-circle {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: var(--blush-light);
+    top: -20px;
+    left: -20px;
+    z-index: 0;
+  }
+
+  .about-image-card {
+    position: relative;
+    z-index: 1;
+    background: var(--mist-light);
+    border-radius: 24px 24px 80px 24px;
+    height: 420px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .about-image-inner {
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(180deg, var(--mist) 0%, rgba(90,100,120,0.4) 100%);
+    border-radius: 200px 200px 0 0;
+  }
+
+  .floating-badge {
+    position: absolute;
+    z-index: 2;
+    top: 2rem;
+    right: -1.5rem;
+    background: white;
+    border-radius: 14px;
+    padding: 0.75rem 1.1rem;
+    box-shadow: 0 4px 20px rgba(42,37,32,0.08);
+    text-align: center;
+  }
+
+  .badge-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--rose);
+    display: block;
+  }
+
+  .badge-label {
+    font-size: 0.62rem;
+    color: var(--ink-mid);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .about-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 1rem;
+  }
+
+  .about-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 200;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-title em { font-style: italic; color: var(--rose); }
+
+  .about-body {
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    max-width: 440px;
+  }
+
+  .cred-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .pill {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    background: var(--sage-light);
+    color: var(--sage-deep);
+    border: 1px solid rgba(110, 131, 106, 0.2);
+  }
+
+  /* SERVICES */
+  .services {
+    background: var(--paper);
+    padding: 6rem 3.5rem;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .services-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .services-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    font-weight: 200;
+    color: var(--ink);
+  }
+
+  .services-title em { font-style: italic; color: var(--rose); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(232, 197, 194, 0.3);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(42,37,32,0.07);
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-rose { background: var(--blush-light); }
+  .icon-sage { background: var(--sage-light); }
+  .icon-mist { background: var(--mist-light); }
+
+  .service-icon svg { width: 20px; height: 20px; }
+
+  .service-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-desc {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-fee {
+    font-size: 0.78rem;
+    color: var(--rose);
+    letter-spacing: 0.05em;
+  }
+
+  /* PROCESS */
+  .process {
+    padding: 6rem 3.5rem;
+    background: var(--cream);
+  }
+
+  .process-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--blush), var(--sage), var(--mist), var(--blush));
+    opacity: 0.4;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .step-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dot-1 { background: var(--blush-light); border: 1.5px solid var(--blush); }
+  .dot-2 { background: var(--sage-light); border: 1.5px solid var(--sage); }
+  .dot-3 { background: var(--mist-light); border: 1.5px solid var(--mist); }
+  .dot-4 { background: var(--blush-light); border: 1.5px solid var(--blush-deep); }
+
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--rose);
+  }
+
+  .step-name {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.78rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    background: var(--blush-light);
+    padding: 6rem 3.5rem;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 18px;
+    padding: 1.75rem;
+    border: 1px solid rgba(232, 197, 194, 0.3);
+  }
+
+  .stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+  }
+
+  .star {
+    width: 14px;
+    height: 14px;
+    background: var(--rose);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0.7;
+  }
+
+  .testimonial-card blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: 0.92rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card cite {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--rose);
+    font-style: normal;
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--sage-light);
+    padding: 6rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(168, 184, 154, 0.2);
+    top: -200px;
+    left: -200px;
+    pointer-events: none;
+  }
+
+  .cta::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(232, 197, 194, 0.2);
+    bottom: -100px;
+    right: -100px;
+    pointer-events: none;
+  }
+
+  .cta-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 200;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-title em { font-style: italic; color: var(--rose); }
+
+  .cta-body {
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    max-width: 460px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.85;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info-chips {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .chip-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .chip-val {
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 2rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 0.9rem;
+    font-weight: 200;
+    color: rgba(250, 248, 245, 0.5);
+  }
+
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: rgba(250, 248, 245, 0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--blush); }
+
+  /* SAMPLE BANNER */
+  .sample-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--rose);
+    color: white;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0.9rem;
+    border-radius: 50px;
+    z-index: 999;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-banner">Portfolio Sample · paulatienza.dev</div>
+
+<nav>
+  <a href="#" class="nav-logo">Dr. Claire Novak, LMFT</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-book">Book a Call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-circle-1"></div>
+    <div class="hero-circle-2"></div>
+    <p class="hero-tag">Couples & Relationship Therapy · Austin, TX</p>
+    <h1 class="hero-h1">
+      Your relationship<br>
+      deserves <em>room</em><br>
+      to <span class="sage">breathe</span>.
+    </h1>
+    <p class="hero-lead">
+      I help couples and individuals untangle the patterns that keep them stuck — and build something that feels genuinely close, not just functional. Gottman-trained, warm, and deeply practical.
+    </p>
+    <div>
+      <a href="#contact" class="btn-rose">Schedule a Free Call →</a>
+      <a href="#about" class="btn-text">Meet Dr. Novak →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="organic-blob"></div>
+    <div class="portrait-frame">
+      <div class="portrait-silhouette"></div>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-label">Current Availability</p>
+      <p class="hero-card-title">Accepting new couples & individuals</p>
+      <div class="availability-dots">
+        <div class="dot open"></div>
+        <div class="dot open"></div>
+        <div class="dot open"></div>
+        <div class="dot closed"></div>
+        <div class="dot closed"></div>
+        <span class="avail-text">3 openings this month</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFT BAND -->
+<div class="soft-band">
+  <div class="band-item">
+    <span class="band-num">10+</span>
+    <span class="band-label">Years in Practice</span>
+  </div>
+  <div class="band-divider"></div>
+  <div class="band-item">
+    <span class="band-num">Gottman</span>
+    <span class="band-label">Level 2 Trained</span>
+  </div>
+  <div class="band-divider"></div>
+  <div class="band-item">
+    <span class="band-num">EFT</span>
+    <span class="band-label">Emotionally Focused</span>
+  </div>
+  <div class="band-divider"></div>
+  <div class="band-item">
+    <span class="band-num">LMFT</span>
+    <span class="band-label">Licensed, Texas #202841</span>
+  </div>
+  <div class="band-divider"></div>
+  <div class="band-item">
+    <span class="band-num">$185</span>
+    <span class="band-label">Per Session</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-image-wrapper">
+    <div class="about-bg-circle"></div>
+    <div class="about-image-card">
+      <div class="about-image-inner"></div>
+    </div>
+    <div class="floating-badge">
+      <span class="badge-num">10+</span>
+      <span class="badge-label">Years experience</span>
+    </div>
+  </div>
+  <div>
+    <p class="about-eyebrow">About Dr. Novak</p>
+    <h2 class="about-title">Therapy that honors<br>the <em>whole</em> relationship</h2>
+    <p class="about-body">
+      I became a couples therapist because I believe relationships are worth the hard work — but that work should feel purposeful, not punishing.
+    </p>
+    <p class="about-body">
+      My practice is warm, structured, and rooted in evidence. I draw primarily from the Gottman Method and Emotionally Focused Therapy — two of the most rigorously researched approaches for couples — while always adapting to what you actually need in the room.
+    </p>
+    <p class="about-body">
+      I work with couples navigating communication breakdowns, infidelity recovery, life transitions, premarital preparation, and the quiet drift that happens when life gets loud.
+    </p>
+    <div class="cred-pills">
+      <span class="pill">LMFT — Texas</span>
+      <span class="pill">Gottman Level 2</span>
+      <span class="pill">EFT Trained</span>
+      <span class="pill">M.A. — UT Austin</span>
+      <span class="pill">LGBTQ+ Affirming</span>
+      <span class="pill">Neurodivergent Friendly</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="services-eyebrow">How I can help</p>
+    <h2 class="services-title">Services for <em>every kind</em> of relationship</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon icon-rose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B5706B" stroke-width="1.5" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <p class="service-name">Couples Therapy</p>
+      <p class="service-desc">Weekly or biweekly sessions for partners at any stage — newlyweds, long-term couples, or those navigating a crisis point. Gottman-based, practical, and honest.</p>
+      <p class="service-fee">$185 / 50 min · $265 / 80 min</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-sage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#6E836A" stroke-width="1.5" stroke-linecap="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <p class="service-name">Individual Therapy</p>
+      <p class="service-desc">For individuals working through relationship patterns, attachment wounds, or the aftermath of a breakup or divorce. Get clear on what you want and why.</p>
+      <p class="service-fee">$160 / 50 min</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon icon-mist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8C9DB0" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <p class="service-name">Premarital Counseling</p>
+      <p class="service-desc">A structured 6-session program using the Gottman Relationship Checkup to give you both a clear picture of your strengths and what to work on before saying yes.</p>
+      <p class="service-fee">$950 / 6-session package</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-header">
+    <p class="services-eyebrow">What to expect</p>
+    <h2 class="services-title">The path to <em>feeling better</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-dot dot-1"><span class="step-num">1</span></div>
+      <p class="step-name">Free 20-min Call</p>
+      <p class="step-desc">We talk about what's going on, answer your questions, and see if we're a good fit.</p>
+    </div>
+    <div class="step">
+      <div class="step-dot dot-2"><span class="step-num">2</span></div>
+      <p class="step-name">First Session</p>
+      <p class="step-desc">We explore the full picture — your history, what you hope for, and what gets in the way.</p>
+    </div>
+    <div class="step">
+      <div class="step-dot dot-3"><span class="step-num">3</span></div>
+      <p class="step-name">Ongoing Work</p>
+      <p class="step-desc">Weekly or biweekly sessions with clear goals, honest feedback, and real tools you can use.</p>
+    </div>
+    <div class="step">
+      <div class="step-dot dot-4"><span class="step-num">4</span></div>
+      <p class="step-name">Lasting Change</p>
+      <p class="step-desc">Not just feeling better in session — but a relationship that holds up when life gets hard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header">
+    <p class="services-eyebrow">What clients say</p>
+    <h2 class="services-title">Real words from <em>real couples</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <blockquote>"We came in barely speaking. After six months with Dr. Novak we actually like each other again. She's warm, direct, and never lets you hide."</blockquote>
+      <cite>— Couple, together 8 years</cite>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <blockquote>"The premarital program was the best investment we made before our wedding. We came out knowing so much more about how we work — and how to repair when we don't."</blockquote>
+      <cite>— Engaged couple, 2024</cite>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <blockquote>"I came for individual therapy after a painful breakup. What I got was a completely new understanding of the patterns I kept repeating. Life-changing, honestly."</blockquote>
+      <cite>— Individual client, 2023</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <p class="cta-eyebrow">Let's talk</p>
+  <h2 class="cta-title">
+    The first step is<br>
+    just a <em>conversation</em>.
+  </h2>
+  <p class="cta-body">
+    The free 20-minute call is no-pressure — it's a chance to see if working together feels right. I'll answer your questions honestly and we'll go from there.
+  </p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-rose">Schedule Free Call →</a>
+  </div>
+  <div class="info-chips">
+    <div class="info-chip">
+      <span class="chip-label">Location</span>
+      <span class="chip-val">Austin, TX + Telehealth</span>
+    </div>
+    <div class="info-chip">
+      <span class="chip-label">Insurance</span>
+      <span class="chip-val">Aetna · BCBS · Private Pay</span>
+    </div>
+    <div class="info-chip">
+      <span class="chip-label">Telehealth</span>
+      <span class="chip-val">Texas, Colorado & Florida</span>
+    </div>
+    <div class="info-chip">
+      <span class="chip-label">Response time</span>
+      <span class="chip-val">Within 24 hours</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Dr. Claire Novak, LMFT · Austin, Texas</span>
+  <ul class="footer-links">
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Good Faith Estimate</a></li>
+    <li><a href="#">Crisis Resources</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

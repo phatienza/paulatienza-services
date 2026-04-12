@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. James Okafor — Anxiety & Performance Psychology | New York</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0A0A0A;
+    --off-black: #111111;
+    --charcoal: #1C1C1C;
+    --electric: #C8F53F;
+    --electric-dim: rgba(200, 245, 63, 0.15);
+    --electric-text: #9AB82E;
+    --white: #F5F5F0;
+    --gray: #888888;
+    --light-gray: #CCCCCC;
+    --border: rgba(255, 255, 255, 0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+    cursor: crosshair;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--electric);
+    text-decoration: none;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--electric) !important;
+    color: var(--black) !important;
+    padding: 0.5rem 1.25rem;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+  }
+  .nav-cta:hover { background: white !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 8rem 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Grid background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--electric);
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--electric);
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .hero-title .outline {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.35);
+    color: transparent;
+  }
+
+  .hero-title .fill { color: var(--white); }
+  .hero-title .accent { color: var(--electric); }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    position: relative;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .hero-stat-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    color: var(--electric);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-cta {
+    grid-column: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .btn-electric {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--electric);
+    color: var(--black);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1rem 1.75rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .btn-electric:hover { background: white; }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid var(--border);
+    color: var(--gray);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1rem 1.75rem;
+    text-decoration: none;
+    transition: all 0.15s;
+    margin-left: 1rem;
+  }
+  .btn-outline:hover { border-color: var(--white); color: var(--white); }
+
+  .arrow-icon {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+  }
+  .btn-electric:hover .arrow-icon { transform: translateX(3px); }
+
+  /* TICKER */
+  .ticker {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    padding: 0.6rem 0;
+    background: var(--off-black);
+  }
+
+  .ticker-inner {
+    display: inline-block;
+    animation: ticker 18s linear infinite;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .ticker-inner span { margin: 0 3rem; }
+  .ticker-sep { color: var(--electric); }
+
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* APPROACH */
+  .approach {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 80vh;
+  }
+
+  .approach-sidebar {
+    border-right: 1px solid var(--border);
+    padding: 4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--off-black);
+  }
+
+  .sidebar-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--electric);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+
+  .sidebar-cred {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cred-block {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  .cred-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--electric);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .cred-val {
+    font-size: 0.82rem;
+    color: var(--light-gray);
+    font-weight: 400;
+  }
+
+  .approach-main {
+    padding: 4rem 4rem;
+  }
+
+  .approach-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--electric);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .approach-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .approach-body {
+    font-size: 0.95rem;
+    color: var(--gray);
+    line-height: 1.85;
+    max-width: 560px;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+  }
+
+  .approach-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 3rem;
+    border: 1px solid var(--border);
+  }
+
+  .method-item {
+    background: var(--off-black);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .method-item:hover { background: var(--charcoal); }
+
+  .method-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--electric);
+    letter-spacing: 0.1em;
+    background: var(--electric-dim);
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+    margin-top: 0.1rem;
+  }
+
+  .method-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .method-desc {
+    font-size: 0.78rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 5rem 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  .services-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--off-black);
+    padding: 2rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:hover { background: var(--charcoal); }
+  .service-card:hover .service-arrow { transform: translate(3px, -3px); }
+
+  .service-card.featured {
+    background: var(--electric-dim);
+    border: 1px solid rgba(200, 245, 63, 0.2);
+  }
+
+  .service-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--electric);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .service-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-price {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--electric);
+  }
+
+  .service-arrow {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+    font-size: 1rem;
+    color: var(--gray);
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .service-card:hover .service-arrow { color: var(--white); }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    border-top: 1px solid var(--border);
+    padding: 5rem 3rem;
+  }
+
+  .testimonial-big {
+    border-left: 2px solid var(--electric);
+    padding: 2rem 3rem;
+    margin-bottom: 2rem;
+    background: var(--off-black);
+  }
+
+  .testimonial-big blockquote {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 400;
+    color: var(--light-gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-big cite {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--electric);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .testimonial-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .testimonial-small {
+    background: var(--off-black);
+    padding: 1.5rem 2rem;
+  }
+
+  .testimonial-small blockquote {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonial-small cite {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--electric);
+    letter-spacing: 0.08em;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  /* CTA */
+  .cta {
+    border-top: 1px solid var(--border);
+    padding: 5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .cta-title {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-title .outline {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.25);
+    color: transparent;
+    display: block;
+  }
+
+  .cta-title .filled { display: block; }
+
+  .cta-title .electric { color: var(--electric); display: block; }
+
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--gray);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .info-val {
+    font-size: 0.88rem;
+    color: var(--white);
+    text-align: right;
+    font-weight: 400;
+  }
+
+  .cta-buttons { display: flex; margin-top: 2rem; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.75rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--off-black);
+  }
+
+  .footer-mono {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gray);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--electric); }
+
+  /* SAMPLE BANNER */
+  .sample-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--electric);
+    color: var(--black);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.9rem;
+    z-index: 999;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-banner">Portfolio Sample · paulatienza.dev</div>
+
+<nav>
+  <a href="#" class="nav-logo">DR.J.OKAFOR_PSY.D</a>
+  <ul class="nav-links">
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-label">New York · Anxiety + Performance Psychology</p>
+  <h1 class="hero-title">
+    <span class="outline">Stop</span><br>
+    <span class="fill">Managing.</span><br>
+    <span class="accent">Start Living.</span>
+  </h1>
+  <div class="hero-bottom">
+    <div class="hero-stat">
+      <span class="hero-stat-num">12+</span>
+      <span class="hero-stat-label">Years Clinical Practice</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">500+</span>
+      <span class="hero-stat-label">Clients Served</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-electric">Book a Consult <span class="arrow-icon">→</span></a>
+      <a href="#approach" class="btn-outline">See My Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Anxiety Disorders</span><span class="ticker-sep"> // </span>
+    <span>High-Performance Coaching</span><span class="ticker-sep"> // </span>
+    <span>CBT + ACT</span><span class="ticker-sep"> // </span>
+    <span>Executive Burnout</span><span class="ticker-sep"> // </span>
+    <span>OCD Treatment</span><span class="ticker-sep"> // </span>
+    <span>Social Anxiety</span><span class="ticker-sep"> // </span>
+    <span>Psy.D. — NYU</span><span class="ticker-sep"> // </span>
+    <span>In-Person & Telehealth</span><span class="ticker-sep"> // </span>
+    <span>Anxiety Disorders</span><span class="ticker-sep"> // </span>
+    <span>High-Performance Coaching</span><span class="ticker-sep"> // </span>
+    <span>CBT + ACT</span><span class="ticker-sep"> // </span>
+    <span>Executive Burnout</span><span class="ticker-sep"> // </span>
+    <span>OCD Treatment</span><span class="ticker-sep"> // </span>
+    <span>Social Anxiety</span><span class="ticker-sep"> // </span>
+    <span>Psy.D. — NYU</span><span class="ticker-sep"> // </span>
+    <span>In-Person & Telehealth</span><span class="ticker-sep"> // </span>
+  </div>
+</div>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="approach-sidebar">
+    <span class="sidebar-label">Credentials</span>
+    <div class="sidebar-cred">
+      <div class="cred-block">
+        <p class="cred-title">License</p>
+        <p class="cred-val">Licensed Psychologist<br>NY #018392</p>
+      </div>
+      <div class="cred-block">
+        <p class="cred-title">Education</p>
+        <p class="cred-val">Psy.D., NYU<br>B.A., Columbia</p>
+      </div>
+      <div class="cred-block">
+        <p class="cred-title">Insurance</p>
+        <p class="cred-val">Aetna · Cigna<br>Oxford · OON</p>
+      </div>
+      <div class="cred-block">
+        <p class="cred-title">Location</p>
+        <p class="cred-val">Midtown Manhattan<br>+ Telehealth (NY, NJ, CT)</p>
+      </div>
+    </div>
+  </div>
+  <div class="approach-main">
+    <p class="approach-eyebrow">// My Approach</p>
+    <h2 class="approach-title">Anxiety is not<br>a character flaw.<br>It's a problem to solve.</h2>
+    <p class="approach-body">
+      Most people with anxiety have spent years trying to "manage" it — deep breaths, avoiding triggers, white-knuckling through panic. That works, until it doesn't.
+    </p>
+    <p class="approach-body">
+      I work differently. Using evidence-based methods from cognitive-behavioral therapy and Acceptance and Commitment Therapy, we don't just cope with anxiety — we change your relationship to it entirely. The goal isn't to feel less. It's to do more.
+    </p>
+    <div class="approach-methods">
+      <div class="method-item">
+        <span class="method-tag">01</span>
+        <div>
+          <p class="method-name">Cognitive Behavioral Therapy</p>
+          <p class="method-desc">Identifying and restructuring the thought patterns driving your anxiety cycle.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-tag">02</span>
+        <div>
+          <p class="method-name">Acceptance & Commitment</p>
+          <p class="method-desc">Stop fighting your mind. Start acting on your values regardless of how you feel.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-tag">03</span>
+        <div>
+          <p class="method-name">Exposure Response Prevention</p>
+          <p class="method-desc">Systematic, supported exposure that actually reduces anxiety over time.</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-tag">04</span>
+        <div>
+          <p class="method-name">Performance Psychology</p>
+          <p class="method-desc">For executives and high-achievers: optimize under pressure, not despite it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="approach-eyebrow">// Services</p>
+      <h2 class="services-title">What I offer</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card featured">
+      <p class="service-tag"><span>★</span> Most Requested</p>
+      <p class="service-name">Anxiety Intensive<br>Program</p>
+      <p class="service-desc">A focused 8-session protocol designed to create significant, measurable change in your anxiety within 2 months — not 2 years.</p>
+      <p class="service-price">$2,400 / program</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card">
+      <p class="service-tag">Individual Therapy</p>
+      <p class="service-name">Weekly Individual<br>Sessions</p>
+      <p class="service-desc">Ongoing one-on-one therapy for anxiety, OCD, panic disorder, and social anxiety. In-person or telehealth.</p>
+      <p class="service-price">$275 / session</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card">
+      <p class="service-tag">Performance</p>
+      <p class="service-name">Executive<br>Performance Coaching</p>
+      <p class="service-desc">For leaders, attorneys, physicians, and founders managing high-stakes anxiety and burnout. Not therapy — results.</p>
+      <p class="service-price">$350 / session</p>
+      <span class="service-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <p class="approach-eyebrow">// Client Reflections</p>
+  <div class="testimonial-big">
+    <blockquote>"I came in managing a panic disorder that had limited my career for five years. Eight months later I gave a keynote at my company's all-hands — something I never believed was possible. Dr. Okafor doesn't just treat anxiety. He changes what you think you're capable of."</blockquote>
+    <cite>— Former client, VP at a tech company</cite>
+  </div>
+  <div class="testimonial-row">
+    <div class="testimonial-small">
+      <blockquote>"I'd done therapy before. This was different — evidence-based, structured, and honest about what would actually work. My anxiety didn't disappear, but it stopped running my life."</blockquote>
+      <cite>— Former client, attorney</cite>
+    </div>
+    <div class="testimonial-small">
+      <blockquote>"The performance coaching track is worth every dollar. For the first time I understand why I spiral before high-stakes situations — and how to use that edge instead of fighting it."</blockquote>
+      <cite>— Former client, surgeon</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div>
+    <h2 class="cta-title">
+      <span class="outline">Ready</span>
+      <span class="filled">to stop</span>
+      <span class="electric">waiting?</span>
+    </h2>
+    <p style="margin-top:1.5rem; font-size:0.88rem; color:var(--gray); max-width:360px; line-height:1.8;">
+      The free 20-minute consultation is a real conversation — no sales pitch. We figure out together if this is a good fit.
+    </p>
+  </div>
+  <div class="cta-right">
+    <div class="info-row">
+      <span class="info-label">Location</span>
+      <span class="info-val">530 W 45th St, New York NY 10036<br><span style="font-size:0.78rem; color: var(--gray);">+ Telehealth: NY, NJ, CT</span></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Fee</span>
+      <span class="info-val">$275 individual · $350 executive<br><span style="font-size:0.78rem; color: var(--gray);">Aetna, Cigna, Oxford in-network</span></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Availability</span>
+      <span class="info-val">Mon–Fri · Morning & Evening slots</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Wait Time</span>
+      <span class="info-val">~1 week for new clients</span>
+    </div>
+    <div class="cta-buttons">
+      <a href="#" class="btn-electric">Book Free Consult <span class="arrow-icon">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-mono">© 2024 Dr. James Okafor, Psy.D. · New York, NY</span>
+  <ul class="footer-links">
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Good Faith Estimate</a></li>
+    <li><a href="#">Crisis Line</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
